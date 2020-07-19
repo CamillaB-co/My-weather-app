@@ -10,6 +10,10 @@
   max-width: 600px;
 }
 
+body {
+  text-transform: capitalize;
+}
+
 h2 {
   font-size: 20px;
 }
@@ -59,4 +63,12 @@ img {
 footer {
   color: #ed5482;
   text-align: center;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
 }

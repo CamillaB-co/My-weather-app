@@ -37,6 +37,10 @@ function showCityTemperature(response) {
   temperature.innerHTML = `${locationTemperature}°C`;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let speedElement = document.querySelector("#speed");
+  speedElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let searchForm = document.querySelector("#submit-button");
