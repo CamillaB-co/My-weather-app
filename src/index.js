@@ -7,7 +7,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 
@@ -35,6 +35,8 @@ function showCityTemperature(response) {
   let locationTemperature = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${locationTemperature}°C`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 let searchForm = document.querySelector("#submit-button");
@@ -73,9 +75,7 @@ function chooseCity(response) {
   let city = document.querySelector("#city-input");
   let apiKey = "5322d70f540cbd1258cef95400cf8e7c";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${
-    city.value
-  }&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=${units}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showCityTemperature);
 }
