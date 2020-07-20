@@ -80,3 +80,12 @@ li {
 .col-6 {
   padding: 0;
 }
+
+.col-6 .active {
+  color: black;
+  cursor: default;
+}
+
+.col-6 .active:hover {
+  text-decoration: none;
+}
