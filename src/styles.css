@@ -76,3 +76,7 @@ li {
   box-sizing: none;
   line-height: 20px;
 }
+
+.col-6 {
+  padding: 0;
+}
