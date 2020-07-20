@@ -32,7 +32,8 @@ function showCity(event) {
 }
 
 function showCityTemperature(response) {
-  let locationTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let locationTemperature = Math.round(celsiusTemperature);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${locationTemperature}`;
   let descriptionElement = document.querySelector("#description");
@@ -53,7 +54,6 @@ searchForm.addEventListener("click", showCity);
 
 function showCurrentLocation(event) {
   event.preventDefault();
-  alert("Let's check your outside temperature");
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
@@ -62,7 +62,7 @@ clickCurrentButton.addEventListener("click", showCurrentLocation);
 
 function showCurrentTemperature(response) {
   console.log(response.data.name);
-  let celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   let locationTemperature = Math.round(celsiusTemperature);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${locationTemperature}`;
